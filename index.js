@@ -17,7 +17,7 @@ var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET;; // Your secret
 var redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
 var frontend_uri = process.env.FRONTEND_URI; //Frontend uri
-
+const PORT = process.env.PORT || 8888;
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string
@@ -148,4 +148,4 @@ app.get('/refresh_token', function(req, res) {
 });
 
 console.log('Listening on 8888');
-app.listen(8888);
+app.listen(PORT);
