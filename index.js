@@ -16,6 +16,7 @@ var cookieParser = require('cookie-parser');
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET;; // Your secret
 var redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
+var frontend_uri = process.env.FRONTEND_URI; //Frontend uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -46,7 +47,7 @@ app.get('/login', function(req, res) {
   res.cookie(stateKey, state);
 
   // your application requests authorization
-  var scope =       'user-read-private user-read-email user-read-recently-played user-top-read user-follow-read user-follow-modify playlist-read-private playlist-read-collaborative playlist-modify-public';
+  var scope ='user-read-private user-read-email user-read-recently-played user-top-read user-follow-read user-follow-modify playlist-read-private playlist-read-collaborative playlist-modify-public';
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -104,11 +105,14 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('/#' +
-          querystring.stringify({
+        res.redirect(
+          `${frontend_uri}/#${querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
-          }));
+          })}`,
+        );
+
+          
       } else {
         res.redirect('/#' +
           querystring.stringify({
