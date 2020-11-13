@@ -16,6 +16,9 @@ CLIENT_SECRET,
 REDIRECT_URI,
 FRONTEND_URI
 
+Note: If running locally, 
+Redirect Uri should be "http://localhost:8888/callback"
+
 # Project Setup
 ```
 npm install
