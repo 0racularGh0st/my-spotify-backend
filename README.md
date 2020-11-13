@@ -11,10 +11,10 @@ Eg.
 ```
 export CLIENT_ID=< your client id> 
 ```
-CLIENT_ID; // Your client id
-CLIENT_SECRET;; // Your secret
-REDIRECT_URI; // Your redirect uri
-FRONTEND_URI; //Frontend uri
+CLIENT_ID,
+CLIENT_SECRET,
+REDIRECT_URI,
+FRONTEND_URI
 
 # Project Setup
 ```
