@@ -1,6 +1,9 @@
 # My Spotify Profile - Server
 Backend service for using My Spotify Profile
 
+# Frontend Repo
+https://github.com/0racularGh0st/my-spotify-frontend
+
 # Pre-Requisites
 Make sure you export the following environment variables before running the App. 
 Details on how to register your App to get a Client id and Client Secret for using Spotify's Web Api -> 
